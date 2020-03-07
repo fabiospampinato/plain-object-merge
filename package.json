@@ -1,7 +1,7 @@
 {
   "name": "plain-object-merge",
   "description": "Extremely fast function optimized for deep merging json-serializable plain objects.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

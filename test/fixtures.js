@@ -18,7 +18,7 @@ const Fixtures = {
       zero: 0,
       false: false,
       null: null,
-      undefined: undefined,
+      undefined: 123,
       arr: ['1', '2', '3'],
       deep: {
         deep: {

@@ -30,7 +30,11 @@ function mergeObjects ( target, source ) {
 
     if ( isPrimitive ( value ) ) {
 
-      target[key] = value;
+      if ( value !== undefined || !(key in target) ) {
+
+        target[key] = value;
+
+      }
 
     } else if ( !target[key] || Array.isArray ( value ) ) {
 

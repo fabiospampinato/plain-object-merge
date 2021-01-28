@@ -24,6 +24,12 @@ function mergeObjects ( target, source ) {
 
   for ( const key in source ) {
 
+    if ( isPrototypePolluted ( key ) ) {
+
+      continue;
+
+    }
+
     const value = source[key];
 
     if ( isPrimitive ( value ) ) {
@@ -43,6 +49,12 @@ function mergeObjects ( target, source ) {
   }
 
   return target;
+
+}
+
+function isPrototypePolluted ( key ) {
+
+  return [ '__proto__', 'constructor', 'prototype' ].includes( key );
 
 }
 

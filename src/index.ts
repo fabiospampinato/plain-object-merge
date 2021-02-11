@@ -24,11 +24,7 @@ function mergeObjects ( target, source ) {
 
   for ( const key in source ) {
 
-    if ( isPrototypePolluted ( key ) ) {
-
-      continue;
-
-    }
+    if ( key === 'constructor' || key === 'prototype' || key === '__proto__' ) break;
 
     const value = source[key];
 
@@ -49,12 +45,6 @@ function mergeObjects ( target, source ) {
   }
 
   return target;
-
-}
-
-function isPrototypePolluted ( key ) {
-
-  return [ '__proto__', 'constructor', 'prototype' ].includes( key );
 
 }
 

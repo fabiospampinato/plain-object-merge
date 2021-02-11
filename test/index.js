@@ -25,4 +25,14 @@ describe ( 'Plain Object Merge', it => {
 
   });
 
+  it ( 'is not succeptible to prototype pollution issues', t => {
+
+    t.deepEqual ( merge ([ {}, { foo: 1, constructor: 2, bar: 3 } ]), { foo: 1, bar: 3 } );
+
+    t.deepEqual ( merge ([ {}, { foo: 1, prototype: 2, bar: 3 } ]), { foo: 1, bar: 3 } );
+
+    t.deepEqual ( merge ([ {}, { foo: 1, __proto__: 2, bar: 3 } ]), { foo: 1, bar: 3 } );
+
+  });
+
 });

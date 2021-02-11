@@ -24,7 +24,7 @@ function mergeObjects ( target, source ) {
 
   for ( const key in source ) {
 
-    if ( key === 'constructor' || key === 'prototype' || key === '__proto__' ) break;
+    if ( key === 'constructor' || key === 'prototype' || key === '__proto__' ) continue;
 
     const value = source[key];
 

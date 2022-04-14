@@ -1,28 +1,16 @@
 
 /* IMPORT */
 
+import {isArray, isPrimitive} from 'is';
 import clone from 'plain-object-clone';
-import * as isPrimitive from 'is-primitive';
 
-/* MERGE */
+/* MAIN */
 
-function merge ( objects: any[] ) {
-
-  const target = clone ( objects[0] );
-
-  for ( let i = 1, l = objects.length; i < l; i++ ) {
-
-    mergeObjects ( target, objects[i] );
-
-  }
-
-  return target;
-
-}
-
-function mergeObjects ( target, source ) {
+const mergeObjects = ( target: any, source: any ): any => {
 
   for ( const key in source ) {
+
+    if ( !source.hasOwnProperty ( key ) ) continue;
 
     if ( key === 'constructor' || key === 'prototype' || key === '__proto__' ) continue;
 
@@ -36,7 +24,7 @@ function mergeObjects ( target, source ) {
 
       }
 
-    } else if ( !target[key] || Array.isArray ( value ) ) {
+    } else if ( !target[key] || isArray ( value ) ) {
 
       target[key] = clone ( value );
 
@@ -50,7 +38,21 @@ function mergeObjects ( target, source ) {
 
   return target;
 
-}
+};
+
+const merge = ( objects: object[] ): object => {
+
+  const target = clone ( objects[0] );
+
+  for ( let i = 1, l = objects.length; i < l; i++ ) {
+
+    mergeObjects ( target, objects[i] );
+
+  }
+
+  return target;
+
+};
 
 /* EXPORT */
 

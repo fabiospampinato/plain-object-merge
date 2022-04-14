@@ -1,11 +1,11 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
-import {default as merge} from '../dist';
-import Fixtures from './fixtures';
+import {describe} from 'fava';
+import merge from '../dist/index.js';
+import Fixtures from './fixtures.js';
 
-/* PLAIN OBJECT MERGE */
+/* MAIN */
 
 describe ( 'Plain Object Merge', it => {
 

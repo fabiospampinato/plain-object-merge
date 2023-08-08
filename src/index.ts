@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
-import {isArray, isPrimitive} from 'is';
 import clone from 'plain-object-clone';
+import {isArray, isPrimitive} from './utils';
 
 /* MAIN */
 

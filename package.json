@@ -25,7 +25,6 @@
     "merge"
   ],
   "dependencies": {
-    "is": "npm:@fabiospampinato/is@^2.5.0",
     "plain-object-clone": "^2.0.0"
   },
   "devDependencies": {

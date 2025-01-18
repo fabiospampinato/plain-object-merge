@@ -5,13 +5,15 @@ Extremely fast function optimized for deep merging json-serializable plain objec
 ## Install
 
 ```sh
-npm install --save plain-object-merge
+npm install plain-object-merge
 ```
 
 ## Usage
 
 ```ts
 import merge from 'plain-object-merge';
+
+// Let's merge some objects together
 
 merge ([
   { deep: { foo: 123 } },

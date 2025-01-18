@@ -3,7 +3,7 @@
   "repository": "github:fabiospampinato/plain-object-merge",
   "description": "Extremely fast function optimized for deep merging json-serializable plain objects.",
   "license": "MIT",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",

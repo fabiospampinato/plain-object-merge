@@ -9,7 +9,7 @@ import Fixtures from './fixtures.js';
 
 describe ( 'Plain Object Merge', it => {
 
-  it ( 'can merge complext objects', t => {
+  it ( 'can merge complex objects', t => {
 
     t.deepEqual ( merge ( Fixtures.parts ), Fixtures.result );
 
@@ -25,7 +25,7 @@ describe ( 'Plain Object Merge', it => {
 
   });
 
-  it ( 'is not succeptible to prototype pollution issues', t => {
+  it ( 'is not susceptible to prototype pollution issues', t => {
 
     t.deepEqual ( merge ([ {}, { foo: 1, constructor: 2, bar: 3 } ]), { foo: 1, bar: 3 } );
 
